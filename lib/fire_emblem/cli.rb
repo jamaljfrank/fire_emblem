@@ -21,9 +21,9 @@ class FireEmblem::CLI
     puts "Enter class number or name for more info. Enter list to see all:"
     
       input = gets.strip.downcase
-      if input.to_i > 0 
+      if input.to_i > 0 && input.to_i < 39
         puts @classes[input.to_i-1]
-       
+
       elsif input == "list"
         list
       elsif input == "exit"

@@ -1,7 +1,7 @@
 class FireEmblem::Class 
  attr_accessor :name, :abilities, :xability, :xart, :url
  def self.all 
-   classes = [
+   @classes = [
 "Archer",
 "Armored Knight",
 "Assassin",
