@@ -1,6 +1,2 @@
-require "fire_emblem/version"
-
-module FireEmblem
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "./fire_emblem/version"
+require_relative './fire_emblem/cli'
