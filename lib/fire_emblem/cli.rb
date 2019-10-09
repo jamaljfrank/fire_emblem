@@ -8,8 +8,8 @@ class FireEmblem::CLI
   
   def list 
      @classes = FireEmblem::Class.all
-     @classes.each_with_index(1) do |class_name, i|
-       puts "#{i}. #{class_name}"
+     @classes.each_with_index do |class_name, i|
+       puts "#{i+1}. #{class_name}"
      end
   end
   
@@ -22,7 +22,8 @@ class FireEmblem::CLI
     
       input = gets.strip.downcase
       if input.to_i > 0 
-        puts @classes[input_to_i-1]
+        puts @classes[input.to_i-1]
+       
       elsif input == "list"
         list
       elsif input == "exit"
