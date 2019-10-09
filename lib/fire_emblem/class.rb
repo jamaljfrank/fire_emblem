@@ -1,46 +1,45 @@
 class FireEmblem::Class 
  attr_accessor :name, :abilities, :xability, :xart, :url
  def self.all 
-   puts <<-DOCS
-1.Archer
-2.Armored Knight
-3.Assassin
-4.Bishop
-5.Bow Knight
-6.Brawler
-7.Brigand
-8.Cavalier
-9.Dancer
-10.Dark Bishop
-11.Dark Knight
-12.Dark Mage
-13.Falcon Knight
-14.Fighter
-15.Fortress Knight
-16.Grappler
-17.Great Knight
-18.Gremory
-19.Hero
-20.Holy Knight
-21.Lord
-22.Mage
-23.Mercenary
-24.Monk
-25.Mortal Savant
-26.Myrmidon
-27.Paladin
-28.Pegasus Knight
-29.Priest
-30.Sniper
-31.Soldier
-32.Swordmaster
-33.Thief
-34.Warlock
-35.War Master
-36.Warrior
-37.Wyvern Lord
-38.Wyvern Rider
-    DOCS
+   puts [
+"Archer",
+"Armored Knight",
+"Assassin",
+"Bishop",
+"Bow Knight",
+"Brawler",
+"Brigand",
+"Cavalier",
+"Dancer",
+"Dark Bishop",
+"Dark Knight",
+"Dark Mage",
+"Falcon Knight",
+"Fighter",
+"Fortress Knight",
+"Grappler",
+"Great Knight",
+"Gremory",
+"Hero",
+"Holy Knight",
+"Lord",
+"Mage",
+"Mercenary",
+"Monk",
+"Mortal Savant",
+"Myrmidon",
+"Paladin",
+"Pegasus Knight",
+"Priest",
+"Sniper",
+"Soldier",
+"Swordmaster",
+"Thief",
+"Warlock",
+"War Master",
+"Warrior",
+"Wyvern Lord",
+"Wyvern Rider"]
     
     class_1 = self.new 
     class_1.name = "Archer"

@@ -7,9 +7,12 @@ class FireEmblem::CLI
   end
   
   def list 
-    
-    @classes = FireEmblem::Class.all
+     @classes = FireEmblem::Class.all
+     @classes.each_with_index(1) do |class_name, i|
+       puts "#{i}. #{class_name}"
+     end
   end
+  
 
   
   def menu
@@ -18,14 +21,11 @@ class FireEmblem::CLI
     puts "Enter class number or name for more info. Enter list to see all:"
     
       input = gets.strip.downcase
-      case input
-      when "1", "armored knight"
-        puts "Armored Knight..."
-      when "2"
-        puts "Cavalier..."
-      when "list"
+      if input.to_i > 0 
+        puts @classes[input_to_i-1]
+      elsif input == "list"
         list
-      when "exit"
+      elsif input == "exit"
         break
       else
         puts "Try again, Professor. If you're ready to leave, type exit."
