@@ -1,11 +1,13 @@
 class FireEmblem::CLI
   
   def call 
-    puts "Select a class:"
     list
+    menu
+    bye
   end
   
   def list 
+    
     puts <<-DOCS
     1. Armored Knight	
     2. Cavalier
@@ -17,5 +19,35 @@ class FireEmblem::CLI
     8. Thief
     DOCS
   end
+
+  
+  def menu
+    input = nil
+    while input != "exit"
+    puts "Enter class number or name for more info. Enter list to see all:"
+    
+      input = gets.strip.downcase
+      case input
+      when "1"
+        puts "Armored Knight..."
+      when "2"
+        puts "Cavalier..."
+      when "list"
+        list
+      else
+        puts "Try again, Professor. If you're ready to leave, type exit."
+      end
+    end
+  end
+  
+  def bye
+    puts "Good luck, Professor. The fate of Fodlan is in your hands!"
+  end
 end
+  
+    
+    
+    
+  
+  
 
