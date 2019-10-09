@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+FireEmblem::CLI.new.call

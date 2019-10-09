@@ -1,0 +1,2 @@
+class FireEmblem
+end
