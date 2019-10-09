@@ -14,7 +14,7 @@ A command line interface for Fire Emblem class information using two pages from 
  
 # shows a list of classes
 # Which class do you want to learn more about?
-# Takes integer on name
+# Takes integer or name
 
 # 1. Armored Knight	
 # 2. Cavalier
