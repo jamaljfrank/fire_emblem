@@ -23,17 +23,19 @@ class FireEmblem::CLI
   
   def menu
     input = nil
-    while input != "exit"
+    loop do
     puts "Enter class number or name for more info. Enter list to see all:"
     
       input = gets.strip.downcase
       case input
-      when "1"
+      when "1", "armored knight"
         puts "Armored Knight..."
       when "2"
         puts "Cavalier..."
       when "list"
         list
+      when "exit"
+        break
       else
         puts "Try again, Professor. If you're ready to leave, type exit."
       end
