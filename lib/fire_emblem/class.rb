@@ -2,7 +2,7 @@ class FireEmblem::Class
  attr_accessor :name, :abilities, :xability, :xart, :url
  def self.all 
    puts <<-DOCS
-    1.Archer
+1.Archer
 2.Armored Knight
 3.Assassin
 4.Bishop
