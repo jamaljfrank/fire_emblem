@@ -1,5 +1,5 @@
 class FireEmblem::Class 
- 
+ attr_accessor :name, :abilities, :xability, :xart, :url
  def self.all 
    puts <<-DOCS
     1.Archer
@@ -48,6 +48,6 @@ class FireEmblem::Class
     class_1.xability = "Hit +20: Increases Hit by 20."
     class_1.xart = "None"
     class_1.url = "https://serenesforest.net/three-houses/classes/class-abilities-arts/"
-    
+    [class_1]
   end
 end
