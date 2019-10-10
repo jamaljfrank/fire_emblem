@@ -42,5 +42,20 @@ class FireEmblem::Class
 "Wyvern Rider"]
     
    
-  end
 end
+
+def self.scrape
+    
+    classes = []
+    classes << self.scrape_serene
+    classes
+    
+end
+
+def self.scrape_serene
+end
+end
+
+
+
+  
