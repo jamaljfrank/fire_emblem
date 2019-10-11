@@ -1,7 +1,7 @@
-class FireEmblem::Class 
+class FireEmblem::Job 
  attr_accessor :name, :abilities, :xability, :xart, :url
  def self.all 
-   @classes = [
+   @jobs = [
 "Archer",
 "Armored Knight",
 "Assassin",
@@ -47,12 +47,14 @@ end
 def self.scrape
     
     classes = []
-    classes << self.scrape_serene
+    classes << self.scrape_rpgsite
     classes
     
 end
 
-def self.scrape_serene
+def self.scrape_rpgsite
+  doc = Nokogiri::HTML(open("https://www.rpgsite.net/feature/8752-fire-emblem-three-houses-class-guide-best-classes-class-change-certification-requirements-skills-abilities-and-class-mastery"))
+  binding.pry 
 end
 end
 

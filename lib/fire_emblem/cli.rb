@@ -7,9 +7,9 @@ class FireEmblem::CLI
   end
   
   def list 
-     @classes = FireEmblem::Class.all
-     @classes.each_with_index do |class_name, i|
-       puts "#{i+1}. #{class_name}"
+     @jobs = FireEmblem::Job.all
+     @jobs.each_with_index do |job_name, i|
+       puts "#{i+1}. #{job_name}"
      end
   end
   
@@ -22,7 +22,7 @@ class FireEmblem::CLI
     
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i < 39
-        puts @classes[input.to_i-1]
+        puts @jobs[input.to_i-1]
 
       elsif input == "list"
         list
