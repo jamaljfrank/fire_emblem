@@ -2,21 +2,17 @@ class FireEmblem::Job
  attr_accessor :name, :abilities, :xability, :xart, :url
  @@jobs = []
  
- def initialize
-    @@jobs << self
-   
-end
-
+ 
 def self.scrape
     
-    @@jobs = []
+    
     @@jobs << self.scrape_rpgsite
     @@jobs
     
 end
 
 def self.all 
-  @@jobs
+  self.scrape
 end
 
 def self.scrape_rpgsite
@@ -28,7 +24,7 @@ def self.scrape_rpgsite
 
 
   
-  binding.pry 
+  
 end
 end
 
