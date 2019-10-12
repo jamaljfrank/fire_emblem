@@ -38,7 +38,7 @@ class FireEmblem::CLI
     puts "Good luck, Professor. The fate of Fodlan is in your hands!"
   end
 end
-  
+
     
     
     
