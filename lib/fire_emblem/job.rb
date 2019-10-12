@@ -26,7 +26,7 @@ def self.scrape_site
   
   
   job[:abilities] = doc.search('table')[3].text.gsub(re, "")
-  binding.pry
+ 
 
 
   
