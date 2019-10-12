@@ -9,7 +9,7 @@ class FireEmblem::CLI
   def list 
     
      FireEmblem::Job.all.each_with_index do |(name, abilities), i|
-       puts "#{i+1}. #{name}#{abilities}"
+       puts "#{i+1}. #{name} "
      end
   end
   
