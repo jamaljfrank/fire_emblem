@@ -22,11 +22,9 @@ def self.scrape_site
   
   job = {}
   
-  job[:name] = doc.search('h1.entry-title').text.split.join.gsub(re, ""),
-  
-  
+  job[:name] = doc.search('h1.entry-title').text.split.join.gsub(re, "")
   job[:abilities] = doc.search('table')[3].text.gsub(re, "")
- 
+  job
 
 
   
