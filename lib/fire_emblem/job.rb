@@ -6,7 +6,7 @@ class FireEmblem::Job
 def self.scrape
     
     
-    @@jobs << self.scrape_rpgsite
+    @@jobs << self.scrape_site
     @@jobs
     
 end
@@ -15,11 +15,15 @@ def self.all
   self.scrape
 end
 
-def self.scrape_rpgsite
-  doc = Nokogiri::HTML(open("https://www.rpgsite.net/feature/8752-fire-emblem-three-houses-class-guide-best-classes-class-change-certification-requirements-skills-abilities-and-class-mastery"))
+def self.scrape_site
+  doc = Nokogiri::HTML(open("https://samurai-gamers.com/fire-emblem-three-houses/archer-class/"))
+  words = ["Fire" , "Emblem:" , "Three" , "Houses" , "-" , "Class"]
+  re = Regexp.union(words)
   job = self.new
-  job.name = doc.xpath('//*[@id="article"]/div[2]/h3[24]').text,
-  job.abilities = doc.xpath('//*[@id="article"]/div[2]/ul[21]/li[2]/ul/li').text
+  job.name = doc.search('h1.entry-title').text,
+  job.name.split.join.gsub(re, "")
+  binding.pry
+  job.abilities = doc.xpath('//*[@id="post-150519"]/div/table[4]/tbody').text
   
 
 
