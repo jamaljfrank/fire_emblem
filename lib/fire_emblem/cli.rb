@@ -8,8 +8,8 @@ class FireEmblem::CLI
   
   def list 
     
-     FireEmblem::Job.all.each_with_index do |(name, abilities), i|
-       puts "#{i+1}. #{name} "
+     FireEmblem::Job.all.each_with_index do |job, i|
+       puts "#{i+1}. #{job[:name]} "
      end
   end
   
