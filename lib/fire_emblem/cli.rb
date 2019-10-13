@@ -34,7 +34,7 @@ puts
     
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i < 38
-        puts @jobs[input.to_i-1]
+        puts FireEmblem::Job.all[input.to_i-1]
 
       elsif input == "list"
         list
