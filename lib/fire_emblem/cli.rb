@@ -1,6 +1,18 @@
 class FireEmblem::CLI
   
   def call 
+   title = <<'ART'
+ ______ __  _ ____  ______   ______ _ ___ ____  ______  __    _____ __ __ ____
+/_  __//_ |/_' _  |/_  __/  /_  __//_' _ ' _  \/_  _  \/_ |  |  __//_ '_ ' _  \
+ | |___ | | | |_| | | |___   | |___ | | | | | | | |_| | | |  | |___ | | | | | |
+ |  __/ | | |    _| |  __/   |  __/ | | | | | | |  _ <  | |  |  __/ | | | | | |
+ | |    | | | |\ \  | |___   | |___ | | | | | | | |_| | | |__| |___ | | | | | |
+ |_|    |_| |_| \_\ |____/   |____/ |_| |_| |_| |_____/ |___/|____/ |_| |_| |_|
+ART
+puts title
+puts
+puts "Enter a class number or name for more information, Professor."
+puts
     list
     menu
     bye
@@ -21,7 +33,7 @@ class FireEmblem::CLI
     puts "Enter class number or name for more info. Enter list to see all:"
     
       input = gets.strip.downcase
-      if input.to_i > 0 && input.to_i < 39
+      if input.to_i > 0 && input.to_i < 38
         puts @jobs[input.to_i-1]
 
       elsif input == "list"
