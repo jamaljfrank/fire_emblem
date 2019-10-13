@@ -16,7 +16,7 @@ end
 
 
 
-def self.scrape_site(url = "https://samurai-gamers.com/fire-emblem-three-houses/archer-class/")
+def self.scrape_site(url="https://samurai-gamers.com/fire-emblem-three-houses/archer-class/")
   
   
   
