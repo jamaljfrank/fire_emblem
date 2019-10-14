@@ -2,8 +2,8 @@ class FireEmblem::Job
  attr_accessor :name, :abilities
  
  
-def self.all 
-  @@all = []  
+def self.all
+   
   urls = [
 
 "https://samurai-gamers.com/fire-emblem-three-houses/archer-class/",
@@ -43,16 +43,16 @@ def self.all
 "https://samurai-gamers.com/fire-emblem-three-houses/wyvern-lord-class/",
 "https://samurai-gamers.com/fire-emblem-three-houses/wyvern-rider-class/"
 ]
-  urls.each { |url|
+  urls.map { |url|
   doc = Nokogiri::HTML(open(url))
   words = ["Fire" , "Emblem:" , "Three" , "Houses" , "-" , "Class" , "Name" , "Effect" , "\n"]
   re = Regexp.union(words)
-  @@all << {
+   {
   :name => doc.search('h1.entry-title').text.split.join.gsub(re, ""),
   :abilities => doc.search('table')[3].text.gsub(re, "")
   } }
   
-@@all
+
 end
 end
 
