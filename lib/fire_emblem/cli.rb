@@ -11,7 +11,7 @@ class FireEmblem::CLI
 ART
 puts title
 puts
-puts "Enter a class number or name for more information, Professor."
+puts "Enter a class name or number for more information, Professor."
 puts
     list
     menu
@@ -19,10 +19,44 @@ puts
   end
   
   def list 
+    puts "
+1. Archer
+2. ArmoredKnight
+3. Assassin
+4. Bishop
+5. BowKnight
+6. Brawler
+7. Brigand
+8. Cavalier
+9. DarkBishop
+10. DarkKnight
+11. DarkMage
+12. FalconKnight
+13. Fighter
+14. FortressKnight
+15. Grappler
+16. GreatKnight
+17. Gremory
+18. Hero
+19. HolyKnight
+20. Mage
+21. Mercenary
+22. Monk
+23. MortalSavant
+24. Myrmidon
+25. Paladin
+26. PegasusKnight
+27. Priest
+28. Sniper
+29. Soldier
+30. Swordmaster
+31. Thief
+32. Warlock
+33. WarMaster
+34. Warrior
+35. WyvernLord
+36. WyvernRider"
     
-     FireEmblem::Job.all.each_with_index do |job, i|
-       puts "#{i+1}. #{job[:name]} "
-     end
   end
   
 
