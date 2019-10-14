@@ -11,7 +11,7 @@ class FireEmblem::CLI
 ART
 puts title
 puts
-puts "Enter a class number for more information, Professor. It might take a few seconds..."
+puts "Enter a class number for more information, Professor."
 puts
     list
     menu
