@@ -52,7 +52,7 @@ class FireEmblem::Data
   :name => doc.search('h1.entry-title').text.split.join.gsub(re, ""),
   :abilities => doc.search('table')[3].text.gsub(re, "")
   } }
-  
+  @@all
 
 end
 end

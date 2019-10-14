@@ -14,7 +14,6 @@ def self.all
 "https://samurai-gamers.com/fire-emblem-three-houses/brawler-class/",
 "https://samurai-gamers.com/fire-emblem-three-houses/brigand-class/",
 "https://samurai-gamers.com/fire-emblem-three-houses/cavalier-class/",
-"https://samurai-gamers.com/fire-emblem-three-houses/dancer-class/",
 "https://samurai-gamers.com/fire-emblem-three-houses/dark-bishop-class/",
 "https://samurai-gamers.com/fire-emblem-three-houses/dark-knight-class/",
 "https://samurai-gamers.com/fire-emblem-three-houses/dark-mage-class/",
