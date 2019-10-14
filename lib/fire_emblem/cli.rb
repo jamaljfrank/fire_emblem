@@ -68,7 +68,8 @@ puts
     
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i < 38
-        puts FireEmblem::Job.all[input.to_i-1]
+       puts FireEmblem::Job.all[input.to_i-1][:name] 
+       puts FireEmblem::Job.all[input.to_i-1][:abilities] 
 
       elsif input == "list"
         list
