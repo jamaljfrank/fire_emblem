@@ -11,7 +11,7 @@ class FireEmblem::CLI
 ART
 puts title
 puts
-puts "Enter a class name or number for more information, Professor. It might take a few seconds..."
+puts "Enter a class number for more information, Professor. It might take a few seconds..."
 puts
     list
     menu
@@ -20,42 +20,42 @@ puts
   
   def list 
     puts "
-1. Archer
-2. ArmoredKnight
-3. Assassin
-4. Bishop
-5. BowKnight
-6. Brawler
-7. Brigand
-8. Cavalier
-9. DarkBishop
-10. DarkKnight
-11. DarkMage
-12. FalconKnight
+ 1. Archer
+ 2. Armored Knight
+ 3. Assassin
+ 4. Bishop
+ 5. Bow Knight
+ 6. Brawler
+ 7. Brigand
+ 8. Cavalier
+ 9. Dark Bishop
+10. Dark Knight
+11. Dark Mage
+12. Falcon Knight
 13. Fighter
-14. FortressKnight
+14. Fortress Knight
 15. Grappler
-16. GreatKnight
+16. Great Knight
 17. Gremory
 18. Hero
-19. HolyKnight
+19. Holy Knight
 20. Mage
 21. Mercenary
 22. Monk
-23. MortalSavant
+23. Mortal Savant
 24. Myrmidon
 25. Paladin
-26. PegasusKnight
+26. Pegasus Knight
 27. Priest
 28. Sniper
 29. Soldier
 30. Swordmaster
 31. Thief
 32. Warlock
-33. WarMaster
+33. War Master
 34. Warrior
-35. WyvernLord
-36. WyvernRider"
+35. Wyvern Lord
+36. Wyvern Rider"
     
   end
   
@@ -70,7 +70,9 @@ puts
       if input.to_i > 0 && input.to_i < 38
        puts FireEmblem::Job.all[input.to_i-1][:name] 
        puts FireEmblem::Job.all[input.to_i-1][:abilities] 
-       puts "Enter class number or name for more info. Enter list to see all:"
+       puts "Enter list to see all:"
+      
+      
 
       elsif input == "list"
         list
