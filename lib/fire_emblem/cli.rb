@@ -11,7 +11,7 @@ class FireEmblem::CLI
 ART
 puts title
 puts
-puts "Enter a class name or number for more information, Professor."
+puts "Enter a class name or number for more information, Professor. It might take a few seconds..."
 puts
     list
     menu
@@ -64,12 +64,13 @@ puts
   def menu
     input = nil
     loop do
-    puts "Enter class number or name for more info. Enter list to see all:"
+    
     
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i < 38
        puts FireEmblem::Job.all[input.to_i-1][:name] 
        puts FireEmblem::Job.all[input.to_i-1][:abilities] 
+       puts "Enter class number or name for more info. Enter list to see all:"
 
       elsif input == "list"
         list
