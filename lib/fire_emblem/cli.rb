@@ -19,46 +19,13 @@ puts
   end
   
   def list 
-    puts "
- 1. Archer
- 2. Armored Knight
- 3. Assassin
- 4. Bishop
- 5. Bow Knight
- 6. Brawler
- 7. Brigand
- 8. Cavalier
- 9. Dark Bishop
-10. Dark Knight
-11. Dark Mage
-12. Falcon Knight
-13. Fighter
-14. Fortress Knight
-15. Grappler
-16. Great Knight
-17. Gremory
-18. Hero
-19. Holy Knight
-20. Mage
-21. Mercenary
-22. Monk
-23. Mortal Savant
-24. Myrmidon
-25. Paladin
-26. Pegasus Knight
-27. Priest
-28. Sniper
-29. Soldier
-30. Swordmaster
-31. Thief
-32. Warlock
-33. War Master
-34. Warrior
-35. Wyvern Lord
-36. Wyvern Rider"
-    
+    puts 
+ jobs = ['Archer','Armored Knight','Assassin','Bishop','Bow Knight','Brawler','Brigand','Cavalier','Dark Bishop','Dark Knight','Dark Mage','Falcon Knight','Fighter','Fortress Knight','Grappler','Great Knight','Gremory','Hero','Holy Knight','Mage','Mercenary','Monk','Mortal Savant','Myrmidon','Paladin','Pegasus Knight','Priest','Sniper','Soldier','Swordmaster','Thief','Warlock','War Master','Warrior','Wyvern Lord','Wyvern Rider']
+ jobs.each.with_index(1) do |j, i|
+   puts "#{i}. #{j}" 
+   
   end
-  
+end
 
   
   def menu
