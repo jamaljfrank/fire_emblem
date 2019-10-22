@@ -34,7 +34,7 @@ end
     
     
       input = gets.strip.downcase
-      if input.to_i > 0 && input.to_i < 38
+      if input.to_i > 0 && input.to_i < 37
        puts FireEmblem::Job.all[input.to_i-1][:name] 
        puts FireEmblem::Job.all[input.to_i-1][:abilities] 
        puts "Enter list to see all:"
