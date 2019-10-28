@@ -2,7 +2,7 @@ class FireEmblem::Scraper
   attr_accessor :job, :doc 
   def initialize(job_name)
     @job = FireEmblem::Job.new 
-    @job.name = job_name
+    
     @job.a1 = nil
     @job.a2 = nil
     @job.a3 = nil
@@ -18,7 +18,7 @@ class FireEmblem::Scraper
   end
   
   def scrape 
-    scrape_details
+    scrape_all
     @job  
   end
   
@@ -29,22 +29,17 @@ class FireEmblem::Scraper
     table = doc.search('table')[3]
     @job.a1 = table.css('td')[0].text
     @job.a2 = table.css('td')[2].text
-    @job.a3 = nil
-    @job.a4 = nil
-    @job.a5 = nil
+    @job.a3 = table.css('td')[4].text
+    @job.a4 = table.css('td')[6].text
+    @job.a5 = table.css('td')[8].text
     @job.a1effect = table.css('td')[1].text
     @job.a2effect = table.css('td')[3].text
-    @job.a3effect = nil
-    @job.a4effect = nil
-    @job.a5effect = nil
+    @job.a3effect = table.css('td')[5].text
+    @job.a4effect = table.css('td')[7].text
+    @job.a5effect = table.css('td')[9].text
     binding.pry
   end
   
-  def scrape_abilities
-    
-      @job.a1 = doc.search('table[3]:td[1]').text
-      
   
-  end
 end
 
