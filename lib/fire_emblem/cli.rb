@@ -15,13 +15,14 @@ puts "Enter a class number for more information, Professor."
 puts
     list
     menu
-    bye
+    
   end
   
   def list 
+    @jobs = ['Archer','Armored-Knight','Assassin','Bishop','Bow-Knight','Brawler','Brigand','Cavalier','Dark-Bishop','Dark-Knight','Dark-Mage','Falcon-Knight','Fighter','Fortress-Knight','Grappler','Great-Knight','Gremory','Hero','Holy-Knight','Mage','Mercenary','Monk','Mortal-Savant','Myrmidon','Paladin','Pegasus-Knight','Priest','Sniper','Soldier','Swordmaster','Thief','Warlock','War-Master','Warrior','Wyvern-Lord','Wyvern-Rider']
     puts 
  
- FireEmblem::Job.all.each.with_index(1) do |j, i|
+    @jobs.each.with_index(1) do |j, i|
    puts "#{i}. #{j}" 
    
   end
@@ -35,7 +36,7 @@ end
     
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i < 37
-       puts FireEmblem::Job.all[input.to_i-1] 
+       puts @jobs[input.to_i-1]
        
        puts "Enter list to see all:"
       
@@ -51,7 +52,7 @@ end
       end
     end
   end
-  
+end
 
     
     
