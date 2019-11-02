@@ -28,7 +28,6 @@ class FireEmblem::Scraper
    
     
   end
-end
 
 def scrape_a1
   @job.a1 = @table.css('td')[0].text
@@ -43,6 +42,7 @@ def scrape_a2
     
   @job.a2effect = @table.css('td')[3].text
 end
+end
 
 def scrape_a3
   if @table.css('td')[4] == nil
@@ -51,6 +51,7 @@ def scrape_a3
     @job.a3 = @table.css('td')[4].text 
     
   @job.a3effect = @table.css('td')[5].text
+end
 end
 
 def scrape_a4
@@ -61,6 +62,7 @@ def scrape_a4
   
   @job.a4effect = @table.css('td')[7].text
 end
+end
 
 def scrape_a5
   if @table.css('td')[8] == nil
@@ -70,6 +72,8 @@ def scrape_a5
     
   
   @job.a5effect = @table.css('td')[9].text
+    
+  end
 end
 end
 
