@@ -13,23 +13,18 @@ class FireEmblem::Scraper
     scrape_a3
     scrape_a4
     scrape_a5
-    
-    puts @job.name
     puts
-    puts @job.a1
-    puts @job.a1effect 
+    puts "Class name: #{@job.name}"
     puts
-    puts @job.a2
-    puts @job.a2effect
+    puts "#{@job.a1} - #{@job.a1effect}"
     puts
-    puts @job.a3
-    puts @job.a3effect
+    puts "#{@job.a2} - #{@job.a2effect}"
     puts
-    puts @job.a4
-    puts @job.a4effect
+    puts "#{@job.a3} -  #{@job.a3effect}"
     puts
-    puts @job.a5
-    puts @job.a5effect
+    puts "#{@job.a4} -  #{@job.a4effect}"
+    puts
+    puts "#{@job.a5} -  #{@job.a5effect}"
   
 end
   
