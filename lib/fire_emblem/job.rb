@@ -8,13 +8,7 @@ class FireEmblem::Job
   
  
   
-  def add_job(job)
-    if !job.is_a?(FireEmblem::Job)
-      raise InvalidType, "must be a FireEmblem::Job"
-    else
-      @jobs << job
-  end
-end
+  
 end
 
 

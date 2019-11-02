@@ -44,11 +44,11 @@ end
 
       elsif input == "list"
         list
-      elsif input == "exit"
+      elsif input == "bye"
         puts "Good luck, Professor. The fate of Fodlan is in your hands!"
         break
       else
-        puts "Try again, Professor. If you're ready to leave, type exit."
+        puts "Try again, Professor. If you're ready to leave, type bye."
       end
     end
   end
