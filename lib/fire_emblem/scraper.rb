@@ -40,21 +40,35 @@ def scrape_a2
     @job.a2 = nil 
   else 
     @job.a2 = @table.css('td')[2].text
+    
   @job.a2effect = @table.css('td')[3].text
 end
 
 def scrape_a3
-  @job.a3 = @table.css('td')[4].text 
+  if @table.css('td')[4] == nil
+    @job.a3 = nil
+  else 
+    @job.a3 = @table.css('td')[4].text 
+    
   @job.a3effect = @table.css('td')[5].text
 end
 
 def scrape_a4
-  @job.a4 = @table.css('td')[6].text
+  if @table.css('td')[6] == nil
+    @job.a4 = nil 
+  else
+    @job.a4 = @table.css('td')[6].text
+  
   @job.a4effect = @table.css('td')[7].text
 end
 
 def scrape_a5
-  @job.a5 = @table.css('td')[8].text
+  if @table.css('td')[8] == nil
+    @job.a5 = nil
+  else
+    @job.a5 = @table.css('td')[8].text
+    
+  
   @job.a5effect = @table.css('td')[9].text
 end
 end
