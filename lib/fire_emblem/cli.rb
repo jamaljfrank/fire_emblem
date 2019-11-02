@@ -36,7 +36,9 @@ end
     
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i < 37
-       puts @jobs[input.to_i-1]
+       a = FireEmblem::Scraper.new(@jobs[input.to_i-1])
+      
+       puts a.scrape
        
        puts "Enter list to see all:"
       

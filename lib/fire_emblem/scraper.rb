@@ -14,17 +14,31 @@ class FireEmblem::Scraper
     scrape_a4
     scrape_a5
     
-    @job  
-  end
+    puts @job.name
+    puts
+    puts @job.a1
+    puts @job.a1effect 
+    puts
+    puts @job.a2
+    puts @job.a2effect
+    puts
+    puts @job.a3
+    puts @job.a3effect
+    puts
+    puts @job.a4
+    puts @job.a4effect
+    puts
+    puts @job.a5
+    puts @job.a5effect
   
-  
+end
   
   def scrape_name
     words = ["Fire" , "Emblem:" , "Three" , "Houses" , "-" , "Class" , "Name" , "Effect" , "\n"]
     re = Regexp.union(words)
     @job.name = doc.search('h1.entry-title').text.split.join.gsub(re, "")
-    table = doc.search('table')[3]
-      
+    
+    
    
     
   end
