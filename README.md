@@ -2,13 +2,20 @@
 THREE HOUSES
 
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fire_emblem`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Fire Emblem!
+This CLI application is a Fire Emblem Three Houses Skill scraper. 
+Input a number associated with a class to get a return of it's skills.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Clone from Github:
+git clone git@github.com:jamaljfrank/fire_emblem.git
+
+Enter directory:
+
+$ cd fire_emblem
+
+
 
 ```ruby
 gem 'fire_emblem'
@@ -24,7 +31,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Start the program by inputting ./bin/fire_emblem
 
 ## Development
 

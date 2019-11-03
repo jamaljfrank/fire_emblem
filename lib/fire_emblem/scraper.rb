@@ -72,7 +72,6 @@ def scrape_a5
   else
     @job.a5 = @table.css('td')[8].text
     
-  
   @job.a5effect = @table.css('td')[9].text
     
   end
