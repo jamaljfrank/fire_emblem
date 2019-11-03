@@ -4,10 +4,13 @@ class FireEmblem::Scraper
     @job = FireEmblem::Job.new 
     @doc = Nokogiri::HTML(open("https://samurai-gamers.com/fire-emblem-three-houses/#{job_name}-class/"))
     @table = doc.search('table')[3]
+    words = ["Fire" , "Emblem:" , "Three" , "Houses" , "-" , "Class" , "Name" , "Effect" , "\n"]
+    re = Regexp.union(words)
+    @job.name = doc.search('h1.entry-title').text.split.join.gsub(re, "")
   end
   
   def scrape 
-    scrape_name
+    
     scrape_a1
     scrape_a2
     scrape_a3
@@ -27,16 +30,6 @@ class FireEmblem::Scraper
     puts "#{@job.a5} -  #{@job.a5effect}"
   
 end
-  
-  def scrape_name
-    words = ["Fire" , "Emblem:" , "Three" , "Houses" , "-" , "Class" , "Name" , "Effect" , "\n"]
-    re = Regexp.union(words)
-    @job.name = doc.search('h1.entry-title').text.split.join.gsub(re, "")
-    
-    
-   
-    
-  end
 
 def scrape_a1
   @job.a1 = @table.css('td')[0].text
