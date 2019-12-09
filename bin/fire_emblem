@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
+require 'bundler/setup'
 require './lib/fire_emblem'
-require "bundler/setup"
+
 
 
 FireEmblem::CLI.new.call
