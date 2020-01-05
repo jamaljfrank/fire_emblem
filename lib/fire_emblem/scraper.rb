@@ -19,60 +19,60 @@ class FireEmblem::Scraper
     puts
     puts "Class name: #{@job.name}"
     puts
-    puts "#{@job.a1} - #{@job.a1effect}"
+    puts "#{@job.skill_1} - #{@job.skill_info_1}"
     puts
-    puts "#{@job.a2} - #{@job.a2effect}"
+    puts "#{@job.skill_2} - #{@job.skill_info_2}"
     puts
-    puts "#{@job.a3} -  #{@job.a3effect}"
+    puts "#{@job.skill_3} -  #{@job.skill_info_3}"
     puts
-    puts "#{@job.a4} -  #{@job.a4effect}"
+    puts "#{@job.skill_4} -  #{@job.skill_info_4}"
     puts
-    puts "#{@job.a5} -  #{@job.a5effect}"
+    puts "#{@job.skill_5} -  #{@job.skill_info_5}"
   
 end
 
 def scrape_a1
-  @job.a1 = @table.css('td')[0].text
-  @job.a1effect = @table.css('td')[1].text
+  @job.skill_1 = @table.css('td')[0].text
+  @job.skill_info_1 = @table.css('td')[1].text
 end
 
 def scrape_a2
   if  @table.css('td')[2] == nil 
-    @job.a2 = nil 
+    @job.skill_2 = nil 
   else 
-    @job.a2 = @table.css('td')[2].text
+    @job.skill_2 = @table.css('td')[2].text
     
-  @job.a2effect = @table.css('td')[3].text
+  @job.skill_info_2 = @table.css('td')[3].text
 end
 end
 
 def scrape_a3
   if @table.css('td')[4] == nil
-    @job.a3 = nil
+    @job.skill_3 = nil
   else 
-    @job.a3 = @table.css('td')[4].text 
+    @job.skill_3 = @table.css('td')[4].text 
     
-  @job.a3effect = @table.css('td')[5].text
+  @job.skill_info_3 = @table.css('td')[5].text
 end
 end
 
 def scrape_a4
   if @table.css('td')[6] == nil
-    @job.a4 = nil 
+    @job.skill_4 = nil 
   else
-    @job.a4 = @table.css('td')[6].text
+    @job.skill_4 = @table.css('td')[6].text
   
-  @job.a4effect = @table.css('td')[7].text
+  @job.skill_info_4 = @table.css('td')[7].text
 end
 end
 
 def scrape_a5
   if @table.css('td')[8] == nil
-    @job.a5 = nil
+    @job.skill_5 = nil
   else
-    @job.a5 = @table.css('td')[8].text
+    @job.skill_5 = @table.css('td')[8].text
     
-  @job.a5effect = @table.css('td')[9].text
+  @job.skill_info_5 = @table.css('td')[9].text
     
   end
 end
