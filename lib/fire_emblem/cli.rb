@@ -21,19 +21,23 @@ ART
   def list 
     @jobs = ['Archer','Armored-Knight','Assassin','Bishop','Bow-Knight','Brawler','Brigand','Cavalier','Dark-Bishop','Dark-Knight','Dark-Mage','Falcon-Knight','Fighter','Fortress-Knight','Grappler','Great-Knight','Gremory','Hero','Holy-Knight','Mage','Mercenary','Monk','Mortal-Savant','Myrmidon','Paladin','Pegasus-Knight','Priest','Sniper','Soldier','Swordmaster','Thief','Warlock','War-Master','Warrior','Wyvern-Lord','Wyvern-Rider']
     
-    @jobs.each.with_index(1) do |j, i|
-      puts "#{i}. #{j}" 
+    @jobs.each.with_index(1) do |job_name, i|
+      puts "#{i}. #{job_name}" 
+      
     end
   end
 
   def menu
     input = nil
+    
     loop do
       input = gets.strip.downcase
+      
       if input.to_i > 0 && input.to_i < 37
         a = FireEmblem::Scraper.new(@jobs[input.to_i-1])
         puts a.scrape
         puts "Enter list to see all:"
+        
       elsif input == "list"
         list
       elsif input == "bye"
