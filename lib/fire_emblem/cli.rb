@@ -30,21 +30,21 @@ ART
     input = nil
     loop do
       input = gets.strip.downcase
-        if input.to_i > 0 && input.to_i < 37
-          a = FireEmblem::Scraper.new(@jobs[input.to_i-1])
-          puts a.scrape
-          puts "Enter list to see all:"
-        elsif input == "list"
-          list
-        elsif input == "bye"
-          puts "Good luck, Professor. The fate of Fodlan is in your hands!"
-          break
-        else
-          puts "Try again, Professor. If you're ready to leave, type bye."
-        end
+      if input.to_i > 0 && input.to_i < 37
+        a = FireEmblem::Scraper.new(@jobs[input.to_i-1])
+        puts a.scrape
+        puts "Enter list to see all:"
+      elsif input == "list"
+        list
+      elsif input == "bye"
+        puts "Good luck, Professor. The fate of Fodlan is in your hands!"
+        break
+      else
+        puts "Try again, Professor. If you're ready to leave, type bye."
       end
     end
   end
+end
 
     
     
