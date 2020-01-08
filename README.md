@@ -13,12 +13,10 @@ git clone git@github.com:jamaljfrank/fire_emblem.git
 
 Enter directory:
 
-$ cd fire_emblem
-
 
 
 ```ruby
-gem 'fire_emblem'
+$ cd fire_emblem
 ```
 
 And then execute:
