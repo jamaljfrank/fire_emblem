@@ -36,7 +36,7 @@ ART
       if input.to_i > 0 && input.to_i < 37
         job_page = FireEmblem::Scraper.new(@jobs[input.to_i-1])
         
-        puts job_page.scrape
+        puts job_page.scrape_skills
         puts "Enter list to see all:"
         
       elsif input == "list"
