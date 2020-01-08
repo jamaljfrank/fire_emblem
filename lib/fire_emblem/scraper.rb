@@ -15,7 +15,7 @@ class FireEmblem::Scraper
     re = Regexp.union(words)
     skills = @table.text.to_s.gsub(re, "").split("\n")
     skills.delete_if {|element| element.length == 0}
-    
+    @skills = skills
     puts
     puts "Class name: #{@job.name}"
     puts
