@@ -20,7 +20,8 @@ ART
   
   def list 
    
-    FireEmblem::Scraper.new.name_array.each.with_index(1) do |job_name, i|
+    @list = FireEmblem::Scraper.new.name_array
+    @list.each.with_index(1) do |job_name, i|
       puts "#{i}. #{job_name}" 
       
     end
@@ -32,8 +33,8 @@ ART
     loop do
       input = gets.strip.downcase
       
-      if input.to_i > 0 && input.to_i < 37
-        job_page = FireEmblem::Scraper.new.(@jobs[input.to_i-1])
+      if input.to_i > 0 && input.to_i < FireEmblem::Scraper.new.name_array.length
+        job_page = FireEmblem::Scraper.new.scrape_name(@list[input.to_i-1])
         
         puts job_page.scrape_skills
         puts "Enter list to see all:"

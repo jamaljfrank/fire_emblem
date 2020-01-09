@@ -3,14 +3,17 @@ class FireEmblem::Scraper
   
   def name_array
     name_doc = Nokogiri::HTML(open("https://samurai-gamers.com/fire-emblem-three-houses/"))
-    words = ["Beginner" , "Classes", "Intermediate", "Advanced"]
+    words = ["Beginner" , "Classes", "Intermediate", "Advanced", " "]
     re = Regexp.union(words)
-    list = name_doc.search('table')[13..16].text.gsub(re, "").split("\n")
+    list = name_doc.search('table')[13..16].text.gsub(re, "-").sub(" ", "-").split("\n")
     
     list.delete_if {|element| element.include?("▼")}
     list.delete_if {|element| element.length <= 1}
     list.sort
   end
+  
+  
+    
 
   def scrape_name(job_name)
     @job = FireEmblem::Job.new 
