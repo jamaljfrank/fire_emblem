@@ -33,7 +33,7 @@ ART
     loop do
       input = gets.strip.downcase
       
-      if input.to_i > 0 && input.to_i < FireEmblem::Scraper.new.name_array.length
+      if input.to_i > 0 && input.to_i < @list.length
         job_page = FireEmblem::Scraper.new.scrape_name(@list[input.to_i-1])
         
         puts job_page.scrape_skills
