@@ -11,26 +11,20 @@ class FireEmblem::Scraper
     list.delete_if {|element| element.length <= 1}
     list.sort
   end
-  
-  
-    
 
-  def scrape_name(job_name)
-    @job = FireEmblem::Job.new 
+  def scrape_all(job_name)
+    
     @doc = Nokogiri::HTML(open("https://samurai-gamers.com/fire-emblem-three-houses/#{job_name}-class/"))
     @table = doc.search('table')[3]
-    words = ["Fire" , "Emblem:" , "Three" , "Houses" , "-" , "Class" , "Name" , "Effect" , "\n"]
-    re = Regexp.union(words)
-    @job.name = doc.search('h1.entry-title').text.split.join.gsub(re, "")
-    
+    name_words = ["Fire" , "Emblem:" , "Three" , "Houses" , "-" , "Class" , "Name" , "Effect" , "\n"]
+    skill_words = ["Name" , "Effect"]
+    nm = Regexp.union(name_words)
+    sk = Regexp.union(skill_words)
+    saved_name = doc.search('h1.entry-title').text.split.join.gsub(nm, "")
+    saved_skills = @table.text.to_s.gsub(sk, "").split("\n")
+    saved_skills.delete_if {|element| element.length == 0}
   end
   
-  def scrape_skills 
-    words = ["Name" , "Effect"]
-    re = Regexp.union(words)
-    skills = @table.text.to_s.gsub(re, "").split("\n")
-    skills.delete_if {|element| element.length == 0}
-    @skills = skills
     puts
     puts "Class name: #{@job.name}"
     puts

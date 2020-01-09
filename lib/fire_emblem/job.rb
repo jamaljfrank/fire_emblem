@@ -4,9 +4,9 @@ class FireEmblem::Job
   @@all = []
   attr_accessor :name, :skills
 
-  def initialize(name, url)
+  def initialize(name, skills)
     @name = name 
-    @url = url 
+    @skills = skills
     @@all << self 
   end
 end

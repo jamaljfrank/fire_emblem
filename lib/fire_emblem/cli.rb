@@ -34,7 +34,7 @@ ART
       input = gets.strip.downcase
       
       if input.to_i > 0 && input.to_i < @list.length
-        job_page = FireEmblem::Scraper.new.scrape_name(@list[input.to_i-1])
+        job_page = FireEmblem::Scraper.new.scrape_all(@list[input.to_i-1])
         
         puts job_page.scrape_skills
         puts "Enter list to see all:"
