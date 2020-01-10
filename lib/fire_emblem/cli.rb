@@ -1,4 +1,4 @@
-class FireEmblem::CLI
+class FireEmblem::CLI 
   
   def call 
     title = <<'ART'

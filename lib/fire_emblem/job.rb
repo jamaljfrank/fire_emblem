@@ -7,6 +7,10 @@ class FireEmblem::Job
   def initialize
     @@all << self
   end
+  
+  def self.all
+    @@all
+  end
 
   def self.scrape_names
     name_doc = Nokogiri::HTML(open("https://samurai-gamers.com/fire-emblem-three-houses/"))
@@ -16,7 +20,7 @@ class FireEmblem::Job
     
     list.delete_if {|element| element.include?("▼")}
     list.delete_if {|element| element.length <= 1}
-    @names = list.sort
+    names = list.sort
   end
 
   def self.scrape(job_name)
