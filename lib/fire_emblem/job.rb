@@ -4,7 +4,9 @@ class FireEmblem::Job
   @@all = []
   attr_accessor :name, :skills
   
-  
+  def initialize
+    @@all << self
+  end
 
   def self.scrape_names
     name_doc = Nokogiri::HTML(open("https://samurai-gamers.com/fire-emblem-three-houses/"))
