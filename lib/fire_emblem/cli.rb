@@ -53,7 +53,7 @@ ART
     loop do
       input = gets.strip.downcase
       
-      if input.to_i > 0 && input.to_i < @names.length 
+      if input.to_i > 0 && input.to_i <= @names.length 
         
         display(FireEmblem::Job.scrape(@names[input.to_i-1]))
         
