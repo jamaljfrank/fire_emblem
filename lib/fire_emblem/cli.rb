@@ -40,9 +40,9 @@ ART
     puts
     puts "#{job_page.skills[4]} - #{job_page.skills[5]}"
     puts
-    puts "#{job_page.skills[6]} -  #{job_page.skills[7]}"
+    puts "#{job_page.skills[6]} - #{job_page.skills[7]}"
     puts
-    puts "#{job_page.skills[8]} -  #{job_page.skills[9]}"
+    puts "#{job_page.skills[8]} - #{job_page.skills[9]}"
     puts
   end
 
