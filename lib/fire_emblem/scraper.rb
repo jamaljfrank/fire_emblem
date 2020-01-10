@@ -24,20 +24,6 @@ class FireEmblem::Scraper
     saved_skills = @table.text.to_s.gsub(sk, "").split("\n")
     saved_skills.delete_if {|element| element.length == 0}
   end
-  
-    puts
-    puts "Class name: #{@job.name}"
-    puts
-    puts "#{skills[0]} - #{skills[1]}"
-    puts
-    puts "#{skills[2]} - #{skills[3]}"
-    puts
-    puts "#{skills[4]} -  #{skills[5]}"
-    puts
-    puts "#{skills[6]} -  #{skills[7]}"
-    puts
-    puts "#{skills[8]} -  #{skills[9]}"
-  end
 end
 
 

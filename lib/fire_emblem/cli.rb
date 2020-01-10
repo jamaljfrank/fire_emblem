@@ -14,18 +14,38 @@ ART
     puts "Enter a class number for more information, Professor."
     puts
     puts
-    list
+    
+    list_names
     menu
   end
   
-  def list 
-   
-    @list = FireEmblem::Scraper.new.name_array
-    @list.each.with_index(1) do |job_name, i|
+  
+
+  def list_names
+    @names = FireEmblem::Job.scrape_names
+    @names.each.with_index(1) do |job_name, i|
       puts "#{i}. #{job_name}" 
       
     end
   end
+
+  def display(job_page)
+    
+    puts
+    puts "Class name: #{job_page.name}"
+    puts
+    puts "#{job_page.skills[0]} - #{job_page.skills[1]}"
+    puts
+    puts "#{job_page.skills[2]} - #{job_page.skills[3]}"
+    puts
+    puts "#{job_page.skills[4]} -  #{job_page.skills[5]}"
+    puts
+    puts "#{job_page.skills[6]} -  #{job_page.skills[7]}"
+    puts
+    puts "#{job_page.skills[8]} -  #{job_page.skills[9]}"
+    puts
+  end
+
 
   def menu
     input = nil
@@ -33,14 +53,14 @@ ART
     loop do
       input = gets.strip.downcase
       
-      if input.to_i > 0 && input.to_i < @list.length
-        job_page = FireEmblem::Scraper.new.scrape_all(@list[input.to_i-1])
+      if input.to_i > 0 && input.to_i < @names.length 
         
-        puts job_page.scrape_skills
+        display(FireEmblem::Job.scrape(@names[input.to_i-1]))
+        
         puts "Enter list to see all:"
         
       elsif input == "list"
-        list
+        list_names
       elsif input == "bye"
         puts "Good luck, Professor. The fate of Fodlan is in your hands!"
         break
@@ -50,7 +70,6 @@ ART
     end
   end
 end
-
     
     
     
