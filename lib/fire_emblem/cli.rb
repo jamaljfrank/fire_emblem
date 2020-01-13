@@ -14,35 +14,36 @@ ART
     puts "Enter a class number for more information, Professor."
     puts
     puts
-    
+    find_names
     list_names
     menu
   end
   
-  
+  def find_names
+    @job = FireEmblem::Job.scrape_names
+  end
 
   def list_names
-    @names = FireEmblem::Job.scrape_names
-    @names.each.with_index(1) do |job_name, i|
-      puts "#{i}. #{job_name}" 
+    @job.each.with_index(1) do |job, i|
+      puts "#{i}. #{job.name}" 
       
     end
   end
 
-  def display(job_page)
+  def display(job)
     
     puts
-    puts "Class name: #{job_page.name}"
+    puts "Class name: #{job.name}"
     puts
-    puts "#{job_page.skills[0]} - #{job_page.skills[1]}"
+    puts "#{job.skills[0]} - #{job.skills[1]}"
     puts
-    puts "#{job_page.skills[2]} - #{job_page.skills[3]}"
+    puts "#{job.skills[2]} - #{job.skills[3]}"
     puts
-    puts "#{job_page.skills[4]} - #{job_page.skills[5]}"
+    puts "#{job.skills[4]} - #{job.skills[5]}"
     puts
-    puts "#{job_page.skills[6]} - #{job_page.skills[7]}"
+    puts "#{job.skills[6]} - #{job.skills[7]}"
     puts
-    puts "#{job_page.skills[8]} - #{job_page.skills[9]}"
+    puts "#{job.skills[8]} - #{job.skills[9]}"
     puts
   end
 
@@ -53,9 +54,15 @@ ART
     loop do
       input = gets.strip.downcase
       
-      if input.to_i > 0 && input.to_i <= @names.length 
+      if input.to_i > 0 && input.to_i <= @job.length && @job[input.to_i-1].skills
         
-        display(FireEmblem::Job.scrape(@names[input.to_i-1]))
+        display(@job[input.to_i-1])
+        
+        puts "Enter list to see all:"
+        
+      elsif input.to_i > 0 && input.to_i <= @job.length
+        
+        display(FireEmblem::Job.scrape(@job[input.to_i-1]))
         
         puts "Enter list to see all:"
         

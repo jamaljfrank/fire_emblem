@@ -4,7 +4,8 @@ class FireEmblem::Job
   @@all = []
   attr_accessor :name, :skills
   
-  def initialize
+  def initialize(name)
+    self.name = name
     @@all << self
   end
   
@@ -21,10 +22,15 @@ class FireEmblem::Job
     list.delete_if {|element| element.include?("▼")}
     list.delete_if {|element| element.length <= 1}
     names = list.sort
+    names.map do |name|
+      job = self.new(name)
+      job
+    end
   end
 
-  def self.scrape(job_name)
-    doc = Nokogiri::HTML(open("https://samurai-gamers.com/fire-emblem-three-houses/#{job_name}-class/"))
+  def self.scrape(job)
+    binding.pry
+    doc = Nokogiri::HTML(open("https://samurai-gamers.com/fire-emblem-three-houses/#{job.name}-class/"))
     table = doc.search('table')[3]
     name_words = ["Fire" , "Emblem:" , "Three" , "Houses" , "-" , "Class" , "Name" , "Effect" , "\n"]
     skill_words = ["Name" , "Effect"]
@@ -33,8 +39,6 @@ class FireEmblem::Job
     scraped_skills = table.text.to_s.gsub(sk, "").split("\n")
     scraped_skills.delete_if {|element| element.length == 0}
 
-    job = self.new
-    job.name = doc.search('h1.entry-title').text.split.join.gsub(nm, "")
     job.skills = scraped_skills
     job
     
