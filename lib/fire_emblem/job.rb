@@ -29,7 +29,7 @@ class FireEmblem::Job
   end
 
   def self.scrape(job)
-    binding.pry
+    
     doc = Nokogiri::HTML(open("https://samurai-gamers.com/fire-emblem-three-houses/#{job.name}-class/"))
     table = doc.search('table')[3]
     name_words = ["Fire" , "Emblem:" , "Three" , "Houses" , "-" , "Class" , "Name" , "Effect" , "\n"]
